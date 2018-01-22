@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0; }
+  
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center; 
+  justify-content: space-around; }
+  
+.center {
+  text-align: center; }
+  
+.nav {
+  color: #777;
+  font-family: arial;
+  height: 60px;  
+  width: 100%;
+  position: fixed;
+  top: 0; 
+  background-color: #f9f9f9;
+  z-index: 1; }
+
+.nav-left {
+	width: 40%; }
+
+.me { 
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	color: #777; }
+	
+.me:hover {
+  color: #555; }
+
+#hamburger {
+  display: none;
+  padding: 0 10px 5px 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  border: 1px solid #777;
+  cursor: pointer; }
+  
+#hamburger:hover {
+  background-color: #f0f0f0;
+}
+
+#nav-btn-wrap2 {
+  display: none; }
+
+.nav-btn {
+  margin: 20px;
+  display: inline-block;
+  font-variant: small-caps; 
+  cursor: pointer; 
+  text-decoration: none; 
+  color: #777; }
+  
+.nav-btn:hover {
+  color: #30baba; }
+
+#who {
+  padding: 70px 0 60px 0;
+  background-color: #30baba; }
+  
+.title {
+	padding: 40px;
+	font-family: arial;
+	font-size: 25px; 
+	display: block; }
+
+.white {
+  color: #f9f9f9; }
+
+.grey {
+  color: #777; }
+
+.bird1 {
+  border-radius: 50%; }
+
+#what {
+  background-color: #777;
+  padding: 60px 0 100px 0; }
+  
+.text {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 2%; }
+  
+.search-Btn {
+  color: #555;
+  position: relative;
+  top: 20px;
+  padding: 14px 18px;
+  background-color: #f9f9f9;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.search-Btn:hover {
+  background-color: #f0f0f0;
+}
+
+#where {
+  padding: 60px 0; }
+  
+#column-Container {
+  justify-content: space-between; }
+
+.column {
+  margin: 2%; }
+  
+.image {
+  max-width: 100%; }
+
+#footer {
+  background-color: #777;
+  padding: 60px; 
+  margin: 0; }
+    
+    
+@media (max-width: 700px) {
+  #column-Container {
+    display: block; }
+
+  #hamburger {
+    display: inline-block; }
+
+  #nav-btn-wrap1 {
+  	display: none; }
+        
+  #nav-btn-wrap2 {
+    font-family: arial;
+    display: flex;
+    background-color: #f9f9f9;
+    width: 100%;
+    position: fixed;
+    left: 0px; 
+    top: 0px;
+    transition: all 200ms ease-in-out;
+  }
+}
+    
+    
