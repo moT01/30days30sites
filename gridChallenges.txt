@@ -365,10 +365,11 @@
   "id": "",
   "title": "Create flexible layouts using auto-fill",
   "description": [
-    "The repeat function comes with the something called <code>auto-fill</code>. It allows you to automatically insert as many rows or columns as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>. Resize the preview panel to see it in action.",
-    "In the right example, <code>grid-template-columns</code> is set to:",
-    "<blockquote>repeat(auto-fill, minmax(50px, 1fr));</blockquote>",
-    "This setup will <code>auto-fill</code> the row with as many 50px columns as it can fit, then stretch those columns to fill the remaining space in the row. If there's too many items to fit on one row - it will move them down to a new row.",
+    "The repeat function comes with something called <dfn>auto-fill</dfn>, which allows you to automatically insert as many tracks of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>. Resize preview panel to see it in action.",
+    "In the preview, <code>grid-template-columns</code> is set to",
+    "<blockquote>repeat(auto-fill, minmax(50px, 1fr));</blockquote>", 
+    "When the container changes size, this setup keeps inserting 50px columns and stretching them until it can insert another one.",
+    "<strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.",
     "<hr>",
     "In the second grid, use <code>auto-fill</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of 60px and maximum of 1fr.",
   ],
@@ -385,8 +386,9 @@
   "id": "",
   "title": "Create flexible layouts using auto-fit",
   "description": [
-    "<code>auto-fit</code> works almost identical to <code>auto-fill</code>. The only difference is that <code>auto-fill</code> will fit in as many of your size items as is can before splitting the remaining space, while <code>auto-fit</code> expands your items to fit the container until gets big enough to add another one.",
-    "See the difference in the preview panel",
+    "<code>auto-fit</code> works almost identical to <code>auto-fill</code>. The only difference is that when the container's size exceeds the size of all the items combined, <code>auto-fill</code> keeps inserting empty row or columns and pushes your items to the side, while <code>auto-fit</code> collapses those empty rows or columns and stretches your items to fit the size of the container.",
+    "See the difference between two in the preview",
+    "<strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.",
     "<hr>",
     "In the second grid, use <code>auto-fit</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of 60px and maximum of 1fr"
   ],
