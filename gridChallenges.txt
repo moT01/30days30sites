@@ -1,226 +1,437 @@
-<h4>Intro</h4>
-[
-"",
-"<dfn>CSS Grid</dfn> helps you easily build complex web designs. It works by turning an HTML element into a grid container with rows and columns for you to place children elements where you want within the grid.",
-""
-]
-
-
-<h4>Create your first CSS Grid</h4>
-[
-"Turn any HTML element into a grid container by setting its <code>display</code> property to <code>grid</code>. This gives you the ability to use all the other properties associated with CSS Grid.",
-"<strong>Note</strong><br>In CSS Grid, the parent element is referred to as <code>container</code> and its children are called <code>items</code>.",
-"<hr>",
-"Change the display of the div with the <code>container</code> class to <code>grid</code>."
-]
-
-
-<h4>Add columns with grid-template-columns</h4>
-[
-"Simply creating a grid element doesn't get you very far. You need to define the structure of the grid, as well. To add some columns to the grid, use the <code>grid-template-columns</code> property on a grid container, as demonstrated below:",
-"<blockquote>.container {<br>display: grid;<br>grid-template-columns: 50px 50px;<br>}</blockquote>",
-"This will give your grid two columns that are 50 pixels wide each.",
-"The number of parameters given to the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.",
-"<hr>",
-"Give the grid container on the right 3 columns that are 100 pixels wide each."
-]
-
-
-<h4>Add rows with grid-template-rows</h4>
-[
-"By default, the grid you created in the last challenge will contain one row. To add more rows, use the <code>grid-template-rows</code> property in the same way that you used <code>grid-template-columns</code> in previous challenge.",
-"<hr>",
-"Add four rows to the grid on the right that are 50 pixels tall each."
-]
-
-
-<h4>Use CSS Grid units to change the size of columns and rows</h4>
-[
-"You can use absolute and relative units that you're probably familiar with like <code>px</code> and <code>em</code> to define the size of rows and columns. CSS Grid accepts other units as well:",
-"<code>fr</code>: sets the size of a track to a fraction of the available space,",
-"<code>auto</code>: sets the size of the track to the width or height of its content automatically,",
-"<code>%</code>: adjusts the size of the track to the specified percent width of its container.",
-"Here's the code that generates the output in the preview:",
-"<blockquote>grid-template-columns: auto 10px 5% 2fr 1fr;</blockquote>",
-"This snippet creates five columns. The width of the first column is as wide as its content. The width of the second column is 10 pixels. The width of the third column is 5% of the width of the container it's in. For the last two columns, the available space is divided into three sections, two of which are allocated for the forth column, and the rest for the fifth column.",
-"<hr>",
-"Make a grid with three rows whose heights are as follows: 1 fraction of available space, 100 pixels, 2 fractions of available space."
-]
-  
-
-<h4>Create a column gutter using grid-column-gap</h4>
-[
-"So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a margin in between the columns. In CSS Grid we call this a <dfn>gutter</dfn>. To add a gutter between the columns, use the <code>grid-column-gap</code> property like this:",
-"<blockquote>grid-column-gap: 10px;</blockquote>",
-"This creates 10 pixels of empty space between all of our columns.",
-"<hr>",
-"Give the columns in the grid on the right a 20 pixel gutter."
-]
-
-
-<h4>Create a row gutter using grid-row-gap</h4>
-[
-"You can add a gutter in between the rows of a grid using the <code>grid-row-gap</code> property in the same way that you added a gutter in between columns in the previous challenge.",
-"<hr>",
-"In the editor pane on the right, create a gutter for the rows that is 5 percent of the width of the grid."
-]
-
-
-<h4>Add gutters faster with grid-gap</h4>
-[
-"<code>grid-gap</code> is a shorthand property for the <code>grid-row-gap</code> and <code>grid-column-gap</code> properties you learned in the previous two challenges and it's often more convenient to use. If <code>grid-gap</code> has one value, it will a create a gutter between all rows and columns of the value given. However, if there are two values, it will use the first one to set the gutter between the rows and the second value for the gutter between the columns.",
-"<hr>",
-"Using the <code>grid-gap</code> property, introduce a 5 percent gutter between the rows and 20 pixel gutter between the columns."
-]
-
-
-<h4>Use grid-column to control spacing</h4>
-[
-"Up to this point, all the properties that have been discussed are for use on grid containers. The <code>grid-column</code> property is the first one you will use on the grid items themselves.",
-"The hypothetical horizontal and vertical lines that create the grid are referred to as <dfn>lines</dfn>. These lines are numbered starting with 1 at the top left corner of the grid and move right for columns and down for rows, counting upward.",
-"To control the amount of columns an item will consume, you can use the <code>grid-column</code> property in conjunction with the line numbers you want the item to start and stop at.",
-"Here's an example:",
-"<blockquote>grid-column: 1 / 3;</blockquote>",
-"This will make an item start at the first vertical line of the grid on the left and span to the 3rd line of the grid, consuming two columns.",
-"<hr>",
-"In the editor pane, make the item with the class <code>item1</code> consume the last two columns of the grid."
-]
-
-
-<h4>Use grid-row to control spacing</h4>
-[
-"Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the <code>grid-row</code> property on a grid item.",
-"<hr>",
-"In the editor pane, make the element with the class <code>item2</code> consume the first two rows."
-]
-
-
-<h4>Align horizontally using the justify-self property</h4>
-[
-"In CSS Grid, the content of each child element is located in a box which is referred to as a <dfn>cell</dfn>. You can adjust the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stetch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:",
-"<code>start</code>: aligns the content at the left of the cell,",
-"<code>center</code>: aligns the content in the center of the cell,",
-"<code>end</code>: aligns the content at the right of the cell.",
-"<hr>",
-"In the editor pane, change the <code>justify-self</code> property to center the item with the class <code>item2</code> horizontally. The item has a border so you can better see how the item behaves."
-]
-
-
-<h4>Align vertically using the align-self property</h4>
-[
-"Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you will use the <code>align-self</code> property, which will accept any of the same values that <code>justify-self</code> can use from the last challenge.",
-"<hr>",
-"Align the item with the class <code>item3</code> vertically at the bottom."
-]
-
-
-<h4>Align all items horizontally</h4>
-[
-"Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all horizontally at once by applying the <code>justify-items</code> property your grid container. This property can accept all the same values you learned about in the previous two challenges, the difference being that it will move all the items in our grid to the desired alignment.",
-"<hr>",
-"Use this property to center all our items horizontally."
-]
-
-
-<h4>Align all items vertically</h4>
-[
-"Using the <code>align-items</code> property on a grid container will set the vertical alignment for all the items in our grid.",
-"<hr>",
-"Use it now, in the editor pane, to move all the items to the bottom of each cell."
-]
-
-
-<h4>Divide the grid into an area template</h4>
-[
-"To remove the complexities from the grid, you can group and name cells of the grid using <code>grid-template-areas</code> on the container in the following manner:",
-"<blockquote>grid-template-areas: \"header header header\"<br>\"advert content content\"<br>\"footer footer footer\";</blockquote>",
-"This gives the cells labels that we can now reference later. In this case, the code above groups the top three cells and names it <code>header</code>, the bottom three cells are grouped and named <code>footer</code>, the left cell in the middle row is labeled as <code>advert</code> and the rest of the cells in the middle row are labeled as <code>content</code>.",
-"<strong>Note</strong><br>Every word represents a cell and every pair of quotation marks represent a row.",
-"In addition to custom labels, you can put a period(<code>.</code>) in the <code>grid-template-areas</code> property to designate an empty cell on the grid.",
-"Also, you can name your areas anything you want",
-"<hr>",
-"Change the area template on the right so that the cell named <code>advert</code> becomes an empty cell."
-]
-
-
-<h4>Grid area: part 1</h4>
-[
-"After creating an areas template for your grid container, as shown in the previous challenge, you need a way to tell the grid what items to put in those areas. To do this, you use the <code>grid-area</code> property on an item like this:",
-"<blockquote>.item1 { grid-area: header };</blockquote>",
-"This lets the grid know that you want the element with the <code>item1</code> class to go in the area with the header label. In this case, the item will use the entire top row because that whole row is set as the header.",
-"<hr>",
-"Add an item in the footer area and give it a <code>lime</code> <code>background-color</code>.
-]
-
-
-<h4>Grid area: part 2</h4>
-[
-"The <code>grid-area</code> property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, we can create an area on the fly for our item to be placed like this:",
-"<blockquote>item1 { grid-area: 1/1/2/4; }</blockquote>",
-"This is using the line numbers we learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:",
-"<blockquote>grid-area: row to start at / column to start at / row to end at / column to end at;</blockquote>",
-"So the area in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.",
-"<hr>".
-"Change the code on the right so that the <code>content</code> class consumes the last two columns in the middle row."
-]
-
-
-<h4>Reduce repetition using the repeat function</h4>
-[
-"When you used <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the structure of a grid, you entered each column and row value into their respective properties to create each individual column and row. So when you made three columns, you entered three values for <code>grid-template-columns.</code>",
-"Lets say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually.  Fortunately, there's a better way - by using the <code>repeat</code> function to specify the number of times you would your column or row to be repeated, followed by a comma and the value you want to repeat.",
-"Here's an example that would create the 100 row grid, each at 50 pixels tall.",
-"<blockquote>grid-template-rows: repeat(100, 50px);</blockquote>",
-"You can also repeat multiple values with the repeat function, and insert the function amongst other values when defining our grid structure. Here's what I mean:",
-"<blockquote>grid-template-columns: repeat(2, 1fr 50px) 20px;</blockquote>",
-"This translates to:",
-"<blockquote>grid-template-columns: 1fr 50px 1fr 50px 20px;</blockquote>",
-"<strong>Note</strong><br><code>1fr 50px</code> is repeated twice followed by 20px.",
-"<hr>",
-"On the right, use the repeat function to remove repetition from the grid-template-columns property."
-]
-
-
-<h4>Limit item size using the minmax function</h4>
-[
-"There's another built-in function to use with <code>grid-template-columns</code> and <code>grid-template-rows</code> called <code>minmax</code>. It's used to limit the change in size of an item when a grid container changes size. To do this you need to specify the acceptable range for the size of your item. Here is an example:",
-"<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote>",
-"In the code above, <code>grid-template-columns</code> is set to create three columns; the first is 100 pixels wide, and the second has the minimum width of 50 pixels and the maximum width of 200px.",
-"<hr>",
-"Using <code>minmax</code> function, add a column to the <code>grid-template-columns</code> property on the right that has the minimum size of 15 pixels and the maximum size of 2fr",
-"<strong>Note</strong><br><code>minmax</code> can be used in conjunction with <code>repeat</code> like this:",
-"<blockquote>repeat(2, minmax(20px, 50%))</blockquote>"
-]
-
-
-<h4>Create implicit layouts using auto-fill and auto-fit</h4>
-[
-"The repeat function comes with <code>auto-fill</code> and <code>auto-fit</code> keywords which allow you to automatically insert as many tracks of your desired size as possible depending on the size of the container. You can create flexible layouts when combining one of these two with the <code>minmax</code> function. Resize the container on the right to see these two in action.",
-"In the right example, <code>grid-template-columns</code> is set to <code>repeat(auto-fill, minmax(50px, 1fr));</code> This keeps inserting 50px tracks and stretching them until it can insert another track. The only difference between these two is that, when the container's size exceeds the size of all the items combined, <code>auto-fill</code> keeps inserting empty tracks and pushing your items to the side while
-<code>auto-fit</code> collapses those empty tracks and stretches your items to fit the container.",
-"<hr>",
-"<h5>some challenge here</h5>"
-]
-
-
-<h4>Use media queries to create responsive layouts</h4>
-[
-"CSS Grid can be an easy way to make your site more responsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items to make your design more flexible.",
-"In the preview, when the viewport width is 700 pixels or less, the number of columns changes from 2 to 3. The advertisement area then occupies the top row, and the div with the class <code>item3</code> moves to the top corner of the grid.",
-"<hr>",
-"Add a media query so that whenever the viewport width is 300 pixels or less, the number of columns changes to one, and the advertisement area moves to the second row."
-]
-
-
-<h4>Create grids within grids</h4>
-[
-"Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you then have a grid within a grid.",
-"As you can see in the preview, setting the <code>display</code> and <code>grid-template-columns</code> properties of the element with the item3 class, you can have a grid that contains another grid.
-"<hr>",
-"Turn the element with the class <code>item4</code> into a grid with two columns by setting its <code>display</code> property to <code>grid</code> and its <code>grid-template-columns</code> property to <code>1fr 1fr</code>."
-]
-
-
-
-
-
+{
+  "id": "",
+  "title": "Intro",
+  "description: [
+    "",
+    "<dfn>CSS Grid</dfn> helps you easily build complex web designs. It works by turning an HTML element into a grid container with rows and columns for you to place children elements where you want within the grid.",
+    ""
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Create your first CSS Grid",
+  "description": [
+    "Turn any HTML element into a grid container by setting its <code>display</code> property to <code>grid</code>. This gives you the ability to use all the other properties associated with CSS Grid.",
+    "<strong>Note</strong><br>In CSS Grid, the parent element is referred to as <code>container</code> and its children are called <code>items</code>.",
+    "<hr>",
+    "Change the display of the div with the <code>container</code> class to <code>grid</code>."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": Add columns with grid-template-columns",
+  "description": [
+    "Simply creating a grid element doesn't get you very far. You need to define the structure of the grid, as well. To add some columns to the grid, use the <code>grid-template-columns</code> property on a grid container, as demonstrated below:",
+    "<blockquote>.container {<br>display: grid;<br>grid-template-columns: 50px 50px;<br>}</blockquote>",
+    "This will give your grid two columns that are 50px wide each.",
+    "The number of parameters given to the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.",
+    "<hr>",
+    "Give the grid container three columns that are 100px wide each."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Add rows with grid-template-rows",
+  "description": [
+    "The grid you created in the last challenge will set the number of rows automatically to 1. To adjust the rows manually, use the <code>grid-template-rows</code> property in the same way you used <code>grid-template-columns</code> in previous challenge.",
+    "<hr>",
+    "Add four rows to the grid that are 50px tall each."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Use CSS Grid units to change the size of columns and rows",
+  "description": [
+    "You can use absolute and relative units like <code>px</code> and <code>em</code> in CSS Grid to define the size of rows and columns. You can use these as well:",
+    "<code>fr</code>: sets the column or row to a fraction of the available space,",
+    "<code>auto</code>: sets the column or row to the width or height of its content automatically,",
+    "<code>%</code>: adjusts the column or row to the percent width of its container.",
+    "Here's the code that generates the output in the preview:",
+    "<blockquote>grid-template-columns: auto 10px 5% 2fr 1fr;</blockquote>",
+    "This snippet creates five columns. The first column is as wide as its content, the second column is 10px, the third column is 5% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth.",
+    "<hr>",
+    "Make a grid with three rows whose heights are as follows: 1fr, 100px, and 2fr."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Create a column gap using grid-column-gap",
+  "description": [
+    "So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a margin in between the columns. In CSS Grid you call this a <dfn>gap</dfn>. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:",
+    "<blockquote>grid-column-gap: 10px;</blockquote>",
+    "This creates 10px of empty space between all of our columns.",
+    "<hr>",
+    "Give the columns in the grid a 20px gap."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Create a row gap using grid-row-gap",
+  "description": [
+    "You can add a gap in between the rows of a grid using <code>grid-row-gap</code> in the same way that you added a gap in between columns in the previous challenge.",
+    "<hr>",
+    "Create a gap for the rows that is 5% of the grid's width."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Add gaps faster with grid-gap",
+  "description": [
+    "<code>grid-gap</code> is a shorthand property for <code>grid-row-gap</code> and <code>grid-column-gap</code> from the previous two challenges, that's more convenient to use. If <code>grid-gap</code> has one value, it will a create a gap between all rows and columns. However, if there are two values, it will use the first one to set the gap between the rows and the second value for the columns.",
+    "<hr>",
+    "Use <code>grid-gap</code> to introduce a 5% gap between the rows and 20px gap between the columns."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Use grid-column to control spacing",
+  "description": [
+    "Up to this point, all the properties that have been discussed are for grid containers. The <code>grid-column</code> property is the first one for use on the grid items themselves.",
+    "The hypothetical horizontal and vertical lines that create the grid are referred to as <dfn>lines</dfn>. These lines are numbered starting with 1 at the top left corner of the grid and move right for columns and down for rows, counting upward.",
+    "To control the amount of columns an item will consume, you can use the <code>grid-column</code> property in conjunction with the line numbers you want the item to start and stop at.",
+    "Here's an example:",
+    "<blockquote>grid-column: 1 / 3;</blockquote>",
+    "This will make the item start at the first vertical line of the grid on the left and span to the 3rd line of the grid, consuming two columns.",
+    "<hr>",
+    "In the editor pane, make the item with the class <code>item1</code> consume the last two columns of the grid."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Use grid-row to control spacing",
+  "description": [
+    "Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the <code>grid-row</code> property on a grid item.",
+    "<hr>",
+    "Make the element with the <code>item2</code> class consume the first two rows."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Align an item horizontally using justify-self",
+  "description": [
+    "In CSS Grid, the content of each child element is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stetch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:",
+    "<code>start</code>: aligns the content at the left of the cell,",
+    "<code>center</code>: aligns the content in the center of the cell,",
+    "<code>end</code>: aligns the content at the right of the cell.",
+    "<hr>",
+    "Change the <code>justify-self</code> property to center the item with the class <code>item2</code>. The item has a border so you can better see how the item behaves."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Align an item vertically using align-self",
+  "description": [
+    "Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you will use the <code>align-self</code> property on an item. This property accepts all of the same values as <code>justify-self</code> from the last challenge.",
+    "<hr>",
+    "Align the item with the class <code>item3</code> vertically at the bottom."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Align all items using justify-items",
+  "description": [
+    "Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all at once horizontally by using <code>justify-items</code> on your grid container. This property can accept all the same values you learned about in the previous two challenges, the difference being that it will move all the items in our grid to the desired alignment.",
+    "<hr>",
+    "Use this property to center all our items horizontally."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Align all items using align-items",
+  "description": [
+    "Using the <code>align-items</code> property on a grid container will set the vertical alignment for all the items in our grid.",
+    "<hr>",
+    "Use it now to move all the items to the bottom of each cell."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Divide the grid into an area template",
+  "description": [
+    "To remove the complexities from the grid, you can group cells into an <dfn>area</dfn> and give it a custom name. Do this by using <code>grid-template-areas</code> on the container like this:",
+    "<blockquote>grid-template-areas: \"header header header\"<br>\"advert content content\"<br>\"footer footer footer\";</blockquote>",
+    "You can reference those names later to apply other properties. The code above names the top area <code>header</code>, the bottom area <code>footer</code>, and makes two areas in the middle row; <code>advert</code> and <code>content</code>.",
+    "<strong>Note</strong><br>Every word represents a cell and every pair of quotation marks represent a row.",
+    "In addition to custom labels, you can use a period (<code>.</code>) to designate an empty cell in the grid.",
+    "<hr>",
+    "Change the area template so that the cell labeled <code>advert</code> becomes an empty cell."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Place items in grid areas using the grid-area property",
+  "description": [
+    "After creating an areas template for your grid container, as shown in the previous challenge, you need a way to tell the grid what items to put in those areas. To do this, you use the <code>grid-area</code> property on an item like this:",
+    "<blockquote>.item1 { grid-area: header };</blockquote>",
+    "This lets the grid know that you want the <code>item1</code> class to go in the area named <code>header</code>. In this case, the item will use the entire top row because that whole row is set as the header area.",
+    "<hr>",
+    "Add an item in the footer area and give it a <code>lime</code> <code>background-color</code>.
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "", 
+  "title": "Use grid-area without creating an areas template",
+  "description": [
+    "The <code>grid-area</code> property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, we can create an area on the fly for our item to be placed:",
+    "<blockquote>item1 { grid-area: 1/1/2/4; }</blockquote>",
+    "This is using the line numbers we learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:",
+    "<blockquote>grid-area: row to start at / column to start at / row to end at / column to end at;</blockquote>",
+    "So the area in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.",
+    "<hr>".
+    "Modify the <code>grid-area</code> property so the <code>content</code> consumes the last two columns in the middle row."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Reduce repetition using the repeat function",
+  "description": [
+    "When you used <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the structure of a grid, you entered a value for each row or column you created.",
+    "Lets say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually.  Fortunately, there's a better way - by using the <code>repeat</code> function to specify the number of times you would your column or row to be repeated, followed by a comma and the value you want to repeat.",
+    "Here's an example that would create the 100 row grid, each at 50px tall.",
+    "<blockquote>grid-template-rows: repeat(100, 50px);</blockquote>",
+    "You can also repeat multiple values with the repeat function, and insert the function amongst other values when defining a grid structure. Here's what I mean:",
+    "<blockquote>grid-template-columns: repeat(2, 1fr 50px) 20px;</blockquote>",
+    "This translates to:",
+    "<blockquote>grid-template-columns: 1fr 50px 1fr 50px 20px;</blockquote>",
+    "<strong>Note</strong><br><code>1fr 50px</code> is repeated twice followed by 20px.",
+    "<hr>",
+    "Use <code>repeat</code> to remove repetition from the <code>grid-template-columns</code> property."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Limit item size using the minmax function",
+  "description": [
+    "There's another built-in function to use with <code>grid-template-columns</code> and <code>grid-template-rows</code> called <code>minmax</code>. It's used to limit the size of our items when the grid container changes size. To do this you need to specify the acceptable size range for your item. Here is an example:",
+    "<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote>",
+    "In the code above, <code>grid-template-columns</code> is set to create three columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.",
+    "<hr>",
+    "Using <code>minmax</code> function, add a column that has the minimum size of 15px and the maximum size of 2fr",
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Create flexible layouts using auto-fill",
+  "description": [
+    "The repeat function comes with the something called <code>auto-fill</code>. It allows you to automatically insert as many rows or columns as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>. Resize the preview panel to see it in action.",
+    "In the right example, <code>grid-template-columns</code> is set to:",
+    "<blockquote>repeat(auto-fill, minmax(50px, 1fr));</blockquote>",
+    "This setup will <code>auto-fill</code> the row with as many 50px columns as it can fit, then stretch those columns to fill the remaining space in the row. If there's too many items to fit on one row - it will move them down to a new row.",
+    "<hr>",
+    "In the second grid, use <code>auto-fill</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of 60px and maximum of 1fr.",
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Create flexible layouts using auto-fit",
+  "description": [
+    "<code>auto-fit</code> works almost identical to <code>auto-fill</code>. The only difference is that <code>auto-fill</code> will fit in as many of your size items as is can before splitting the remaining space, while <code>auto-fit</code> expands your items to fit the container until gets big enough to add another one.",
+    "See the difference in the preview panel",
+    "<hr>",
+    "In the second grid, use <code>auto-fit</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of 60px and maximum of 1fr"
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Use media queries to create responsive layouts",
+  "description": [
+    "CSS Grid can be an easy way to make your site more responsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items to make your design more flexible.",
+    "In the preview, when the viewport width is 700px or less, the number of columns changes from 2 to 3. The advertisement area then occupies the top row, and the div with the class <code>item3</code> moves to the top corner of the grid.",
+    "<hr>",
+    "Add a media query so that whenever the viewport width is 300px or less, the number of columns changes to one, and the advertisement area moves to the second row."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+},
+{
+  "id": "",
+  "title": "Create grids within grids",
+  "description": [
+    "Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you then have a grid within a grid.",
+    "As you can see in the preview, setting the <code>display</code> and <code>grid-template-columns</code> properties of the element with the <code>item3</code> class, you can have a grid that contains another grid.
+    "<hr>",
+    "Turn the element with the <code>item4</code> class into a grid with two columns at 1fr width each."
+  ],
+  "challengeSeed": [],
+  "tests": [],
+  "solutions": [],
+  "hints": [],
+  "type": "",
+  "releasedOn": "",
+  "challengeType": 0,
+  "translations": {}
+}
