@@ -1,7 +1,7 @@
 {
   "id": "",
   "title": "Intro",
-  "description: [
+  "description": [
     "",
     "<dfn>CSS Grid</dfn> helps you easily build complex web designs. It works by turning an HTML element into a grid container with rows and columns for you to place children elements where you want within the grid.",
     ""
@@ -35,7 +35,7 @@
 },
 {
   "id": "",
-  "title": Add columns with grid-template-columns",
+  "title": "Add columns with grid-template-columns",
   "description": [
     "Simply creating a grid element doesn't get you very far. You need to define the structure of the grid, as well. To add some columns to the grid, use the <code>grid-template-columns</code> property on a grid container, as demonstrated below:",
     "<blockquote>.container {<br>display: grid;<br>grid-template-columns: 50px 50px;<br>}</blockquote>",
@@ -285,7 +285,7 @@
     "<blockquote>.item1 { grid-area: header };</blockquote>",
     "This lets the grid know that you want the <code>item1</code> class to go in the area named <code>header</code>. In this case, the item will use the entire top row because that whole row is set as the header area.",
     "<hr>",
-    "Add an item in the footer area and give it a <code>lime</code> <code>background-color</code>.
+    "Add an item in the footer area and give it a <code>lime</code> <code>background-color</code>."
   ],
   "challengeSeed": [],
   "tests": [],
@@ -305,7 +305,7 @@
     "This is using the line numbers we learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:",
     "<blockquote>grid-area: row to start at / column to start at / row to end at / column to end at;</blockquote>",
     "So the area in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.",
-    "<hr>".
+    "<hr>",
     "Modify the <code>grid-area</code> property so the <code>content</code> consumes the last two columns in the middle row."
   ],
   "challengeSeed": [],
@@ -350,7 +350,7 @@
     "<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote>",
     "In the code above, <code>grid-template-columns</code> is set to create three columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.",
     "<hr>",
-    "Using <code>minmax</code> function, add a column that has the minimum size of 15px and the maximum size of 2fr",
+    "Using <code>minmax</code> function, add a column that has the minimum size of 15px and the maximum size of 2fr"
   ],
   "challengeSeed": [],
   "tests": [],
@@ -371,7 +371,7 @@
     "When the container changes size, this setup keeps inserting 50px columns and stretching them until it can insert another one.",
     "<strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.",
     "<hr>",
-    "In the second grid, use <code>auto-fill</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of 60px and maximum of 1fr.",
+    "In the second grid, use <code>auto-fill</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of 60px and maximum of 1fr."
   ],
   "challengeSeed": [],
   "tests": [],
@@ -424,7 +424,7 @@
   "title": "Create grids within grids",
   "description": [
     "Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you then have a grid within a grid.",
-    "As you can see in the preview, setting the <code>display</code> and <code>grid-template-columns</code> properties of the element with the <code>item3</code> class, you can have a grid that contains another grid.
+    "As you can see in the preview, setting the <code>display</code> and <code>grid-template-columns</code> properties of the element with the <code>item3</code> class, you can have a grid that contains another grid.",
     "<hr>",
     "Turn the element with the <code>item4</code> class into a grid with two columns at 1fr width each."
   ],
