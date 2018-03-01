@@ -1,0 +1,81 @@
+### 1 Introduction to CSS Variables
+  `CSS Variables` are a way to quickly change multiple CSS property values throughout your stylesheet. By setting up a variable and assigning it a value, you can style other elements by referencing that variable.
+
+### 2 Invent a custom CSS variable
+  To create a `CSS Variable` you just need to give it a name with `two dashes` in front of it, and assign it a value like this:
+  `--primaryColor: red;`
+  This will set a variable named `primaryColor` to the value of `red`.
+  Now you can use that variable elsewhere in your CSS to change the color of other properties to red.
+  ##### Create a variable named `secondaryColor` and give it a value of `pink`.
+
+### 3 Use a custom CSS variable
+  After you created your variable you can now assign the value of that variable to other CSS properties by referencing the name you gave it.  
+  `color: var(--primaryColor);`
+  This will change the color of whatever element you are targeting to red because that is the value of the `--primaryColor` variable.
+  Note: you cannot use a variable before it is created
+  ##### Assign the `--secondaryColor` variable to the `color` property of the `.element` class 
+
+### 4 Quickly change many styles with CSS Variables
+  By having a variable available you can use it to apply its value to multiple CSS properties.
+  ##### Create a variable named `primaryColor` and give it a value of `red`. Notice how it changes the color of all the properties that use that variable.
+  Note: styles will not be applied unless the variable names are an exact match.
+
+### 5 Fallback values
+  When assigning your variable to a CSS property you can attach a `fallback` style that your page will revert to if for some reason it can't get your variable to work. It could be that someone is using an older browser that hasn't yet adopted CSS Variables, or perhaps their device doesn't support the value you gave the variable. Here's how you do it:
+  `color: var(--primaryColor, blue);`
+  This will set `color` to `blue` if there is a problem with your variable.
+  Note: This can be very useful for debugging.
+  ##### Give the `color` property of `.element` a `fallback` value of `blue`.
+
+### 6 Cascading variables
+  When you create your variable, it is available in to use on the element you create it in and all the elements nested within it. This effect is known as `cascading`. Because of this, CSS Variables are often defined in the `:root` element. You can think of the `:root` element as a container your entire HTML document in the same way that an `<html>` tag is a container for the `<body>` tag. By creating our variables in `:root` they will be available throughout the whole web page. In the preview you can see how `--primaryColor` only changes the color of the element of where it is created and the elements within it.
+  ##### Change the code so that `--primaryColor` is created in `:root` and applies its style to all the elements.
+
+### 7 Change a variable for a specific area of your page
+  When you create your variables in `:root` it will set the value of that variable for the whole page. Unless at some point you change the value of that variable.
+##### Redefine `--primaryColor` in `.element2` and change its value to `blue`. Notice how the `element1` remains red.
+  Note: Use this wisely as it can almost defeat the purpose of using CSS Variables.
+  ### 1 Introduction to CSS Variables
+  `CSS Variables` are a way to quickly change multiple CSS property values throughout your stylesheet. After setting up a variable and assigning it a value, you can style other elements by referencing that variable.
+
+### 2 Invent a custom CSS variable
+  To create a `CSS Variable` you just need to give it a name with `two dashes` in front of it, and assign it a value like this:
+  `--primaryColor: red;`
+  This will set a variable named `primaryColor` to the value of `red`.
+  Now you can use that variable elsewhere in your CSS to change the color of other properties to red.
+  ##### Create a variable named `secondaryColor` and give it a value of `pink`.
+
+### 3 Use a custom CSS variable
+  After you created your variable you can now assign the value of that variable to other CSS properties by referencing the name you gave it.  
+  `color: var(--primaryColor);`
+  This will change the color of whatever element you are targeting to red because that is the value of the `--primaryColor` variable.
+  Note: you cannot use a variable before it is created.
+  ##### Assign the `--secondaryColor` variable to the `color` property of the `.element` class 
+
+### 4 Quickly change many styles with CSS Variables
+  By having a variable available you can use it to apply its value to multiple CSS properties.
+  ##### Create a variable named `primaryColor` and give it a value of `red`. Notice how it changes the color of all the properties that use that variable.
+  Note: styles will not be applied unless the variable names are an exact match.
+
+### 5 Fallback values
+  When assigning your variable to a CSS property you can attach a `fallback` style that your page will revert to if for some reason it can't get your variable to work. It could be that someone is using an older browser that hasn't yet adopted CSS Variables, or perhaps their device doesn't support the value you gave the variable. Here's how you do it:
+  `color: var(--primaryColor, blue);`
+  This will set `color` to `blue` if there is a problem with your variable.
+  Note: This can be very useful for debugging.
+  ##### Give the `color` property of `.element` a `fallback` value of `blue`.
+
+### 6 Cascading variables
+  When you create your variable, it is available in to use on the element you create it in and all the elements nested within it. This effect is known as `cascading`. Because of this, CSS Variables are often defined in the `:root` element. You can think of the `:root` element as a container your entire HTML document in the same way that an `<html>` tag is a container for the `<body>` tag. By creating our variables in `:root` they will be available throughout the whole web page. In the preview you can see how `--primaryColor` only changes the color of the element of where it is created and the elements within it.
+  ##### Change the code so that `--primaryColor` is created in `:root` and applies its style to all the elements.
+
+### 7 Change a variable for a specific area of your page
+  When you create your variables in `:root` it will set the value of that variable for the whole page. Unless at some point you change the value of that variable.
+##### Redefine `--primaryColor` in `.element2` and change its value to `blue`. Notice how the `element1` remains red.
+  Note: Use this wisely as it can almost defeat the purpose of using CSS Variables.
+  
+### 8 CSS Variables and media queries?
+### 9 CSS Variable and javascript?
+
+### 8 CSS Variables and media queries?
+### 9 CSS Variable and javascript?
+
